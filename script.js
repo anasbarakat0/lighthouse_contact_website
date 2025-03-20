@@ -87,3 +87,24 @@ const contactItems = [
   
   // Initialize the app
   document.addEventListener("DOMContentLoaded", generateContactCards);
+
+  // Function to fetch and display version information
+async function displayVersionInfo() {
+    try {
+      const response = await fetch('version.json');
+      if (!response.ok) {
+        throw new Error('Failed to load version information');
+      }
+      const versionData = await response.json();
+      const versionInfoElement = document.getElementById('version-info');
+      versionInfoElement.textContent = `Version ${versionData.version} (Build ${versionData.build_number})`;
+    } catch (error) {
+      console.error('Error loading version information:', error);
+    }
+  }
+  
+  // Initialize the app
+  document.addEventListener('DOMContentLoaded', () => {
+    generateContactCards();
+    displayVersionInfo(); // Call the function to display version info
+  });
