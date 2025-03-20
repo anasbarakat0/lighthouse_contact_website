@@ -1,107 +1,49 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <style>
-    body {
-      margin: 0;
-      background-color: #f5f5f5;
-      /* lightGrey */
-      font-family: sans-serif;
-    }
-
-    #splash-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: solid #F4F6FF;
-      /* darkNavy & navy */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #splash-header img {
-      height: 250px;
-      margin-bottom: 80px;
-    }
-
-
-    .loader {
-      margin-top: 30px;
-      border: 10px solid #EB8317;
-      border-top: 10px solid transparent;
-      border-radius: 100%;
-      width: 100px;
-      height: 100px;
-      animation: spin 0.7s linear infinite;
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/">
-
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description"
-    content="Contact details for Lighthouse coworking space: website, email, phone, address, and social media links.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="info_website">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <title>LightHouse Contact Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png"> <!-- Add favicon here -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0A0A0A" />
-
+  <meta name="theme-color" content="#0A0A0A">
 </head>
-
 <body>
-  <div id="splash-screen">
-    <div id="splash-header">
-      <img src="dark-en-logo.svg" alt="Logo" />
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-clip">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path
+          d="M0,320 L0,270 Q720,320 1440,270 L1440,320 Z"
+          fill="url(#gradient)"
+        ></path>
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#F4F6FF"></stop>
+            <stop offset="100%" stop-color="#F4F6FF"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
-    <div class="loader"></div>
-  </div>
+    <div class="header-content">
+      <img src="assets/en-logo.svg" alt="Logo" class="logo">
+      <h1>Contact Us</h1>
+    </div>
+  </header>
 
-  <script src="main.dart.js" type="application/javascript"></script>
-  <script src="flutter_bootstrap.js" async></script>
-  <script>
-    window.addEventListener('flutter-first-frame', function () {
-      document.getElementById('splash-screen').style.display = 'none';
-    });
-  </script>
+  <!-- Contact Section -->
+  <main class="contact-section">
+    <div class="contact-grid" id="contact-grid">
+      <!-- Contact cards will be dynamically generated here -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div id="version-info"></div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
-
 </html>
